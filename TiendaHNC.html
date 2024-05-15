@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Online Dropshipping</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .card {
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .cart-container {
+      position: fixed;
+      top: 70px;
+      right: 20px;
+      width: 300px;
+      border: 1px solid #EEE;
+      background-color: #FFF;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .btn-checkout {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="logo.png" alt="Logo" style="height: 40px;"> Tienda Dropshipping
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" id="cart-btn">Carrito</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <div class="row">
+    <!-- Donna Karan New York -->
+    <div class="col-md-3">
+      <div class="card">
+        <img src="donnakaran1.jpg" class="card-img-top" alt="Donna Karan New York">
+        <div class="card-body">
+          <h5 class="card-title">Vestido Donna Karan</h5>
+          <p class="card-text">Vestido de noche elegante</p>
+          <p class="text-muted">Precio: $199.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Vestido Donna Karan" data-price="199.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="donnakaran2.jpg" class="card-img-top" alt="Donna Karan New York">
+        <div class="card-body">
+          <h5 class="card-title">Bolso Donna Karan</h5>
+          <p class="card-text">Bolso de cuero elegante</p>
+          <p class="text-muted">Precio: $159.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Bolso Donna Karan" data-price="159.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="donnakaran3.jpg" class="card-img-top" alt="Donna Karan New York">
+        <div class="card-body">
+          <h5 class="card-title">Gafas de sol Donna Karan</h5>
+          <p class="card-text">Gafas de sol de moda</p>
+          <p class="text-muted">Precio: $129.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Gafas de sol Donna Karan" data-price="129.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="donnakaran4.jpg" class="card-img-top" alt="Donna Karan New York">
+        <div class="card-body">
+          <h5 class="card-title">Perfume Donna Karan</h5>
+          <p class="card-text">Perfume floral para mujeres</p>
+          <p class="text-muted">Precio: $79.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Perfume Donna Karan" data-price="79.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <!-- Michael Kors -->
+    <div class="col-md-3">
+      <div class="card">
+        <img src="michaelkors1.jpg" class="card-img-top" alt="Michael Kors">
+        <div class="card-body">
+          <h5 class="card-title">Reloj Michael Kors</h5>
+          <p class="card-text">Reloj de oro rosa para mujer</p>
+          <p classclass="text-muted">Precio: $299.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Michael Kors" data-price="299.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="michaelkors2.jpg" class="card-img-top" alt="Michael Kors">
+        <div class="card-body">
+          <h5 class="card-title">Bolso Michael Kors</h5>
+          <p class="card-text">Bolso de cuero negro</p>
+          <p class="text-muted">Precio: $199.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Bolso Michael Kors" data-price="199.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="michaelkors3.jpg" class="card-img-top" alt="Michael Kors">
+        <div class="card-body">
+          <h5 class="card-title">Cartera Michael Kors</h5>
+          <p class="card-text">Cartera de cuero marrón</p>
+          <p class="text-muted">Precio: $149.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Cartera Michael Kors" data-price="149.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="michaelkors4.jpg" class="card-img-top" alt="Michael Kors">
+        <div class="card-body">
+          <h5 class="card-title">Reloj cronógrafo Michael Kors</h5>
+          <p class="card-text">Reloj deportivo para hombre</p>
+          <p class="text-muted">Precio: $349.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Reloj cronógrafo Michael Kors" data-price="349.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <!-- Hugo Boss -->
+    <div class="col-md-3">
+      <div class="card">
+        <img src="hugoboss1.jpg" class="card-img-top" alt="Hugo Boss">
+        <div class="card-body">
+          <h5 class="card-title">Traje Hugo Boss</h5>
+          <p class="card-text">Traje de negocios para hombres</p>
+          <p class="text-muted">Precio: $399.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Traje Hugo Boss" data-price="399.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="hugoboss2.jpg" class="card-img-top" alt="Hugo Boss">
+        <div class="card-body">
+          <h5 class="card-title">Camisa Hugo Boss</h5>
+          <p class="card-text">Camisa de vestir para hombres</p>
+          <p class="text-muted">Precio: $99.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Camisa Hugo Boss" data-price="99.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="hugoboss3.jpg" class="card-img-top" alt="Hugo Boss">
+        <div class="card-body">
+          <h5 class="card-title">Zapatos Hugo Boss</h5>
+          <p class="card-text">Zapatos de vestir de cuero</p>
+          <p class="text-muted">Precio: $249.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Zapatos Hugo Boss" data-price="249.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="hugoboss4.jpg" class="card-img-top" alt="Hugo Boss">
+        <div class="card-body">
+          <h5 class="card-title">Corbata Hugo Boss</h5>
+          <p class="card-text">Corbata de seda negra</p>
+          <p class="text-muted">Precio: $79.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Corbata Hugo Boss" data-price="79.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <!-- Guess -->
+    <div class="col-md-3">
+      <div class="card">
+        <img src="guess1.jpg" class="card-img-top" alt="Guess">
+        <div class="card-body">
+          <h5 class="card-title">Reloj Guess</h5>
+          <p class="card-text">Reloj de acero inoxidable</p>
+          <p class="text-muted">Precio: $149.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Guess" data-price="149.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="guess2.jpg" class="card-img-top" alt="Guess">
+        <div class="card-body">
+          <h5 class="card-title">Bolso Guess</h5>
+          <p class="card-text">Bolso de mano de cuero</p>
+          <p class="text-muted">Precio: $99.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Bolso Guess" data-price="99.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="guess3.jpg" class="card-img-top" alt="Guess">
+        <div class="card-body">
+          <h5 class="card-title">Gafas de sol Guess</h5>
+          <p class="card-text">Gafas de sol de moda</p>
+          <p class="card-text">Precio: $79.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Gafas de sol Guess" data-price="79.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="guess4.jpg" class="card-img-top" alt="Guess">
+        <div class="card-body">
+          <h5 class="card-title">Billetera Guess</h5>
+          <p class="card-text">Billetera de cuero negro</p>
+          <p class="text-muted">Precio: $49.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Billetera Guess" data-price="49.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <!-- Louis Vuitton -->
+    <div class="col-md-3">
+      <div class="card">
+        <img src="louisvuitton1.jpg" class="card-img-top" alt="Louis Vuitton">
+        <div class="card-body">
+          <h5 class="card-title">Bolso Louis Vuitton</h5>
+          <p class="card-text">Bolso de cuero de diseño</p>
+          <p class="text-muted">Precio: $899.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Bolso Louis Vuitton" data-price="899.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="louisvuitton2.jpg" class="card-img-top" alt="Louis Vuitton">
+        <div class="card-body">
+          <h5 class="card-title">Bufanda Louis Vuitton</h5>
+          <p class="card-text">Bufanda de lana de lujo</p>
+          <p class="text-muted">Precio: $299.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Bufanda Louis Vuitton" data-price="299.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="louisvuitton3.jpg" class="card-img-top" alt="Louis Vuitton">
+        <div class="card-body">
+          <h5 class="card-title">Cartera Louis Vuitton</h5>
+          <p class="card-text">Cartera de piel de becerro</p>
+          <p class="text-muted">Precio: $499.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Cartera Louis Vuitton" data-price="499.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card">
+        <img src="louisvuitton4.jpg" class="card-img-top" alt="Louis Vuitton">
+        <div class="card-body">
+          <h5 class="card-title">Zapatos Louis Vuitton</h5>
+          <p class="card-text">Zapatos de vestir de cuero</p>
+          <p class="text-muted">Precio: $799.99</p>
+          <button class="btn btn-primary btn-add-to-cart" data-name="Zapatos Louis Vuitton" data-price="799.99">Agregar al carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Continúa con las demás marcas y productos -->
+
+</div>
+
+<!-- Carrito de compras -->
+<div class="cart-container d-none" id="cart-container">
+  <h5>Carrito de compras</h5>
+  <hr>
+  <div id="cart-items"></div>
+  <hr>
+  <p>Total: $<span id="cart<!-- Continuación de las marcas y productos -->
+<div class="row mt-3>
+    <!-- Supreme -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="supreme1.jpg" class="card-img-top" alt="Supreme">
+            <div class="card-body">
+                <h5 class="card-title">Sudadera Supreme</h5>
+                <p class="card-text">Sudadera con capucha</p>
+                <p class="text-muted">Precio: $89.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Sudadera Supreme" data-price="89.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="supreme2.jpg" class="card-img-top" alt="Supreme">
+            <div class="card-body">
+                <h5 class="card-title">Gorra Supreme</h5>
+                <p class="card-text">Gorra de béisbol</p>
+                <p class="text-muted">Precio: $39.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Gorra Supreme" data-price="39.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="supreme3.jpg" class="card-img-top" alt="Supreme">
+            <div class="card-body">
+                <h5 class="card-title">Mochila Supreme</h5>
+                <p class="card-text">Mochila de tela negra</p>
+                <p class="text-muted">Precio: $99.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Mochila Supreme" data-price="99.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="supreme4.jpg" class="card-img-top" alt="Supreme">
+            <div class="card-body">
+                <h5 class="card-title">Cinturón Supreme</h5>
+                <p class="card-text">Cinturón de tela roja</p>
+                <p class="text-muted">Precio: $49.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Cinturón Supreme" data-price="49.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Dior -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="dior1.jpg" class="card-img-top" alt="Dior">
+            <div class="card-body">
+                <h5 class="card-title">Vestido Dior</h5>
+                <p class="card-text">Vestido de noche elegante</p>
+                <p class="text-muted">Precio: $699.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Vestido Dior" data-price="699.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="dior2.jpg" class="card-img-top" alt="Dior">
+            <div class="card-body">
+                <h5 class="card-title">Perfume Dior</h5>
+                <p class="card-text">Perfume floral para mujeres</p>
+                <p class="text-muted">Precio: $129.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Perfume Dior" data-price="129.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="dior3.jpg" class="card-img-top" alt="Dior">
+            <div class="card-body">
+                <h5 class="card-title">Bolso Dior</h5>
+                <p class="card-text">Bolso de cuero negro</p>
+                <p class="text-muted">Precio: $499.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Bolso Dior" data-price="499.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="dior4.jpg" class="card-img-top" alt="Dior">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Dior</h5>
+                <p class="card-text">Reloj de oro rosa para mujer</p>
+                <p class="text-muted">Precio: $999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Dior" data-price="999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Dolce & Gabana -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="dolcegabana1.jpg" class="card-img-top" alt="Dolce & Gabana">
+            <div class="card-body">
+                <h5 class="card-title">Traje Dolce & Gabana</h5>
+                <p class="card-text">Traje de lujo para hombres</p>
+                <p class="text-muted">Precio: $1499.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Traje Dolce & Gabana" data-price="1499.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="dolcegabana2.jpg" class="card-img-top" alt="Dolce & Gabana">
+            <div class="card-body">
+                <h5 class="card-title">Gafas de sol Dolce & Gabana</h5>
+                <p class="card-text">Gafas de sol de diseño</p>
+                <p class="text-muted">Precio: $249.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Gafasde sol Dolce & Gabana" data-price="249.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="dolcegabana3.jpg" class="card-img-top" alt="Dolce & Gabana">
+            <div class="card-body">
+                <h5 class="card-title">Perfume Dolce & Gabana</h5>
+                <p class="card-text">Perfume floral para mujeres</p>
+                <p class="text-muted">Precio: $99.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Perfume Dolce & Gabana" data-price="99.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="dolcegabana4.jpg" class="card-img-top" alt="Dolce & Gabana">
+            <div class="card-body">
+                <h5 class="card-title">Zapatos Dolce & Gabana</h5>
+                <p class="card-text">Zapatos de vestir de cuero</p>
+                <p class="text-muted">Precio: $499.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Zapatos Dolce & Gabana" data-price="499.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Hublot -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="hublot1.jpg" class="card-img-top" alt="Hublot">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Hublot</h5>
+                <p class="card-text">Reloj cronógrafo para hombres</p>
+                <p class="text-muted">Precio: $999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Hublot" data-price="999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="hublot2.jpg" class="card-img-top" alt="Hublot">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Hublot</h5>
+                <p class="card-text">Reloj de pulsera de titanio</p>
+                <p class="text-muted">Precio: $1999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Hublot" data-price="1999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="hublot3.jpg" class="card-img-top" alt="Hublot">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Hublot</h5>
+                <p class="card-text">Reloj automático de acero</p>
+                <p class="text-muted">Precio: $1499.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Hublot" data-price="1499.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="hublot4.jpg" class="card-img-top" alt="Hublot">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Hublot</h5>
+                <p class="card-text">Reloj de cuarzo negro</p>
+                <p class="text-muted">Precio: $2499.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Hublot" data-price="2499.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continuar con el resto de marcas y productos -->
+
+<div class="row mt-3">
+    <!-- Jacob & Co -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="jacobco1.jpg" class="card-img-top" alt="Jacob & Co">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Jacob & Co</h5>
+                <p class="card-text">Reloj de lujo con diamantes</p>
+                <p class="text-muted">Precio: $4999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Jacob & Co" data-price="4999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="jacobco2.jpg" class="card-img-top" alt="Jacob & Co">
+            <div class="card-body">
+                <h5 class="card-title">Collar Jacob & Co</h5>
+                <p class="card-text">Collar de oro blanco con diamantes</p>
+                <p class="text-muted">Precio: $6999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Collar Jacob & Co" data-price="6999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="jacobco3.jpg" class="card-img-top" alt="Jacob & Co">
+            <div class="card-body">
+                <h5 class="card-title">Pulsera Jacob & Co</h5>
+                <p class="card-text">Pulsera de oro amarillo</p>
+                <p class="text-muted">Precio: $3999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Pulsera Jacob & Co" data-price="3999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="jacobco4.jpg" class="card-img-top" alt="Jacob & Co">
+            <div class="card-body">
+                <h5 class="card-title">Anillo Jacob & Co</h5>
+                <p class="card-text">Anillo de compromiso con diamante</p>
+                <p class="text-muted">Precio: $8999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Anillo Jacob & Co" data-price="8999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Rolex -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="rolex1.jpg" class="card-img-top" alt="Rolex">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Rolex</h5>
+                <p class="card-text">Reloj de oro amarillo</p>
+                <p class="text-muted">Precio: $14999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Rolex" data-price="14999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="rolex2.jpg" class="card-img-top" alt="Rolex">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Rolex</h5>
+                <p class="card-text">Reloj submarinista de acero</p>
+                <p class="text-muted">Precio: $7999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Rolex" data-price="7999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="rolex3.jpg" class="card-img-top" alt="Rolex">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Rolex</h5>
+                <p class="card-text">Reloj deportivo de titanio</p>
+                <p class="text-muted">Precio: $9999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Rolex" data-price="9999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="rolex4.jpg" class="card-img-top" alt="Rolex">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Rolex</h5>
+                <p class="card-text">Reloj de oro rosa con diamantes</p>
+                <p class="text-muted">Precio: $19999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Rolex" data-price="19999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Richard Miller -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="richardmiller1.jpg" class="card-img-top" alt="Richard Miller">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Richard Miller</h5>
+                <p class="card-text">Reloj de lujo con esqueleto de titanio</p>
+                <p class="text-muted">Precio: $29999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Richard Miller" data-price="29999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="richardmiller2.jpg" class="card-img-top" alt="Richard Miller">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Richard Miller</h5>
+                <p class="card-text">Reloj deportivo de titanio</p>
+                <p class="text-muted">Precio: $24999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Richard Miller" data-price="24999.99">Agregar al carrito</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="richardmiller3.jpg" class="card-img-top" alt="Richard Miller">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Richard Miller</h5>
+                <p class="card-text">Reloj de pulsera de acero y oro rosa</p>
+                <p class="text-muted">Precio: $39999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Richard Miller" data-price="39999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="richardmiller4.jpg" class="card-img-top" alt="Richard Miller">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Richard Miller</h5>
+                <p class="card-text">Reloj de buceo de titanio negro</p>
+                <p class="text-muted">Precio: $44999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Richard Miller" data-price="44999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div >
+
+<!-- Continuación con las demás marcas y productos -->
+
+<div class="row mt-3">
+    <!-- Audemars Piguet -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="audemarspiguet1.jpg" class="card-img-top" alt="Audemars Piguet">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Audemars Piguet</h5>
+                <p class="card-text">Reloj cronógrafo de acero</p>
+                <p class="text-muted">Precio: $14999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Audemars Piguet" data-price="14999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="audemarspiguet2.jpg" class="card-img-top" alt="Audemars Piguet">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Audemars Piguet</h5>
+                <p class="card-text">Reloj de lujo con correa de caucho</p>
+                <p class="text-muted">Precio: $19999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Audemars Piguet" data-price="19999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="audemarspiguet3.jpg" class="card-img-top" alt="Audemars Piguet">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Audemars Piguet</h5>
+                <p class="card-text">Reloj de buceo de titanio</p>
+                <p class="text-muted">Precio: $24999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Audemars Piguet" data-price="24999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="audemarspiguet4.jpg" class="card-img-top" alt="Audemars Piguet">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Audemars Piguet</h5>
+                <p class="card-text">Reloj cronógrafo de oro rosa</p>
+                <p class="text-muted">Precio: $29999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Audemars Piguet" data-price="29999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Omega -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="omega1.jpg" class="card-img-top" alt="Omega">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Omega</h5>
+                <p class="card-text">Reloj de pulsera de acero inoxidable</p>
+                <p class="text-muted">Precio: $6999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Omega" data-price="6999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="omega2.jpg" class="card-img-top" alt="Omega">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Omega</h5>
+                <p class="card-text">Reloj cronógrafo de titanio</p>
+                <p class="text-muted">Precio: $8999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Omega" data-price="8999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="omega3.jpg" class="card-img-top" alt="Omega">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Omega</h5>
+                <p class="card-text">Reloj de buceo de cerámica negra</p>
+                <p class="text-muted">Precio: $11999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Omega" data-price="11999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="omega4.jpg" class="card-img-top" alt="Omega">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Omega</h5>
+                <p class="card-text">Reloj de oro amarillo con diamantes</p>
+                <p class="text-muted">Precio: $24999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Omega" data-price="24999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Cartier -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="cartier1.jpg" class="card-img-top" alt="Cartier">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Cartier</h5>
+                <p class="card-text">Reloj de oro rosa con correa de cuero</p>
+                <p class="text-muted">Precio: $19999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Cartier" data-price="19999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="cartier2.jpg" class="card-img-top" alt="Cartier">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Cartier</h5>
+                <p class="card-text">Reloj de oro blanco con diamantes</p>
+                <p class="card-text">Precio: $29999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Cartier" data-price="29999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="cartier3.jpg" class="card-img-top" alt="Cartier">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Cartier</h5>
+                <p class="card-text">Reloj de pulsera de acero y oro</p>
+                <p class="text-muted">Precio: $24999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Cartier" data-price="24999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="cartier4.jpg" class="card-img-top" alt="Cartier">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Cartier</h5>
+                <p class="card-text">Reloj de lujo con correa de satén</p>
+                <p class="text-muted">Precio: $34999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Cartier" data-price="34999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Breguet -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="breguet1.jpg" class="card-img-top" alt="Breguet">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Breguet</h5>
+                <p class="card-text">Reloj de pulsera de oro blanco</p>
+                <p class="text-muted">Precio: $39999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Breguet" data-price="39999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="breguet2.jpg" class="card-img-top" alt="Breguet">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Breguet</h5>
+                <p class="card-text">Reloj cronógrafo de oro rosa</p>
+                <p class="text-muted">Precio: $49999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Breguet" data-price="49999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="breguet3.jpg" class="card-img-top" alt="Breguet">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Breguet</h5>
+                <p class="card-text">Reloj de buceo de titanio negro</p>
+                <p class="text-muted">Precio: $59999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Breguet" data-price="59999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="breguet4.jpg" class="card-img-top" alt="Breguet">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Breguet</h5>
+                <p class="card-text">Reloj de oro amarillo con esfera negra</p>
+                <p class="text-muted">Precio: $69999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Breguet" data-price="69999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Prada -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="prada1.jpg" class="card-img-top" alt="Prada">
+            <div class="card-body">
+                <h5 class="card-title">Bolso Prada</h5>
+                <p class="card-text">Bolso de mano de cuero</p>
+                <p class="text-muted">Precio: $1499.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Bolso Prada" data-price="1499.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="prada2.jpg" class="card-img-top" alt="Prada">
+            <div class="card-body">
+                <h5 class="card-title">Bolso Prada</h5>
+                <p class="card-text">Bolso de hombro de piel</p>
+                <p class="text-muted">Precio: $1999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Bolso Prada" data-price="1999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="prada3.jpg" class="card-img-top" alt="Prada">
+            <div class="card-body">
+                <h5 class="card-title">Bolso Prada</h5>
+                <p class="card-text">Bolso tote de nylon</p>
+                <p class="text-muted">Precio: $999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Bolso Prada" data-price="999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="prada4.jpg" class="card-img-top" alt="Prada">
+            <div class="card-body">
+                <h5 class="card-title">Bolso Prada</h5>
+                <p class="card-text">Bolso bandolera de cuero</p>
+                <p class="text-muted">Precio: $2499.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Bolso Prada" data-price="2499.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Pandora -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="pandora1.jpg" class="card-img-top" alt="Pandora">
+            <div class="card-body">
+                <h5 class="card-title">Pulsera Pandora</h5>
+                <p class="card-text">Pulsera de plata con dijes</p>
+                <p class="text-muted">Precio: $499.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Pulsera Pandora" data-price="499.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="pandora2.jpg" class="card-img-top" alt="Pandora">
+            <div class="card-body">
+                <h5 class="card-title">Pulsera Pandora</h5>
+                <p class="card-text">Pulsera de cuero con dijes</p>
+                <p class="text-muted">Precio: $399.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Pulsera Pandora" data-price="399.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="pandora3.jpg" class="card-img-top" alt="Pandora">
+            <div class="card-body">
+                <h5 class="card-title">Pendientes Pandora</h5>
+                <p class="card-text">Pendientes de plata con circonitas</p>
+                <p class="text-muted">Precio: $299.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Pendientes Pandora" data-price="299.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="pandora4.jpg" class="card-img-top" alt="Pandora">
+            <div class="card-body">
+                <h5 class="card-title">Anillo Pandora</h5>
+                <p class="card-text">Anillo de plata con circonitas</p>
+                <p class="text-muted">Precio: $199.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Anillo Pandora" data-price="199.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Continuar con las demás marcas y productos -->
+
+</div>
+
+<!-- Carrito de compras -->
+<div class="cart-container d-none" id="cart-container">
+  <h5>Carrito de compras</h5>
+  <hr>
+  <div id="cart-items"></div>
+  <hr>
+  <p>Total: $<span id="cart-total">0.00</span></p>
+  <button class="btn btn-success btn-checkout">Checkout</button>
+</div>
+
+
+<div class="row mt-3">
+    <!-- Bvlgari -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="bvlgari1.jpg" class="card-img-top" alt="Bvlgari">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Bvlgari</h5>
+                <p class="card-text">Reloj de pulsera de acero inoxidable</p>
+                <p class="text-muted">Precio: $7999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Bvlgari" data-price="7999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="bvlgari2.jpg" class="card-img-top" alt="Bvlgari">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Bvlgari</h5>
+                <p class="card-text">Reloj de buceo de titanio negro</p>
+                <p class="text-muted">Precio: $8999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Bvlgari" data-price="8999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="bvlgari3.jpg" class="card-img-top" alt="Bvlgari">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Bvlgari</h5>
+                <p class="card-text">Reloj cronógrafo de oro rosa</p>
+                <p class="text-muted">Precio: $10999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Bvlgari" data-price="10999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="bvlgari4.jpg" class="card-img-top" alt="Bvlgari">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Bvlgari</h5>
+                <p class="card-text">Reloj de lujo con correa de cuero</p>
+                <p class="text-muted">Precio: $12999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Bvlgari" data-price="12999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Buccellati -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="buccellati1.jpg" class="card-img-top" alt="Buccellati">
+            <div class="card-body">
+                <h5 class="card-title">Anillo Buccellati</h5>
+                <p class="card-text">Anillo de oro amarillo con diamantes</p>
+                <p class="text-muted">Precio: $5999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Anillo Buccellati" data-price="5999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="buccellati2.jpg" class="card-img-top" alt="Buccellati">
+            <div class="card-body">
+                <h5 class="card-title">Collar Buccellati</h5>
+                <p class="card-text">Collar de oro blanco con perlas</p>
+                <p class="text-muted">Precio: $7999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Collar Buccellati" data-price="7999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="buccellati3.jpg" class="card-img-top" alt="Buccellati">
+            <div class="card-body">
+                <h5 class="card-title">Pendientes Buccellati</h5>
+                <p class="card-text">Pendientes de oro rosa con rubíes</p>
+                <p class="text-muted">Precio: $4999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Pendientes Buccellati" data-price="4999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="buccellati4.jpg" class="card-img-top" alt="Buccellati">
+            <div class="card-body">
+                <h5 class="card-title">Reloj Buccellati</h5>
+                <p class="card-text">Reloj de oro amarillo con diamantes</p>
+                <p class="text-muted">Precio: $10999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Reloj Buccellati" data-price="10999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Tifanny & Co -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="tifanny1.jpg" class="card-img-top" alt="Tifanny & Co">
+            <div class="card-body">
+                <h5 class="card-title">Anillo Tifanny & Co</h5>
+                <p class="card-text">Anillo de plata con zafiros</p>
+                <p class="text-muted">Precio: $2999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Anillo Tifanny & Co" data-price="2999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="tifanny2.jpg" class="card-img-top" alt="Tifanny & Co">
+            <div class="card-body">
+                <h5 class="card-title">Pendientes Tifanny & Co</h5>
+
+<p class="card-text">Pendientes de plata con perlas</p>
+                <p class="text-muted">Precio: $1999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Pendientes Tifanny & Co" data-price="1999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="tifanny3.jpg" class="card-img-top" alt="Tifanny & Co">
+            <div class="card-body">
+                <h5 class="card-title">Collar Tifanny & Co</h5>
+                <p class="card-text">Collar de oro blanco con diamantes</p>
+                <p class="text-muted">Precio: $4999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Collar Tifanny & Co" data-price="4999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="tifanny4.jpg" class="card-img-top" alt="Tifanny & Co">
+            <div class="card-body">
+                <h5 class="card-title">Pulsera Tifanny & Co</h5>
+                <p class="card-text">Pulsera de oro rosa con perlas</p>
+                <p class="text-muted">Precio: $3999.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Pulsera Tifanny & Co" data-price="3999.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Swarovski -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="swarovski1.jpg" class="card-img-top" alt="Swarovski">
+            <div class="card-body">
+                <h5 class="card-title">Collar Swarovski</h5>
+                <p class="card-text">Collar de cristales de Swarovski</p>
+                <p class="text-muted">Precio: $799.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Collar Swarovski" data-price="799.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="swarovski2.jpg" class="card-img-top" alt="Swarovski">
+            <div class="card-body">
+                <h5 class="card-title">Anillo Swarovski</h5>
+                <p class="card-text">Anillo de plata con cristales de Swarovski</p>
+                <p class="text-muted">Precio: $599.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Anillo Swarovski" data-price="599.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="swarovski3.jpg" class="card-img-top" alt="Swarovski">
+            <div class="card-body">
+                <h5 class="card-title">Pendientes Swarovski</h5>
+                <p class="card-text">Pendientes de plata con perlas de Swarovski</p>
+                <p class="text-muted">Precio: $399.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Pendientes Swarovski" data-price="399.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="swarovski4.jpg" class="card-img-top" alt="Swarovski">
+            <div class="card-body">
+                <h5 class="card-title">Pulsera Swarovski</h5>
+                <p class="card-text">Pulsera de plata con cristales de Swarovski</p>
+                <p class="text-muted">Precio: $499.99</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Pulsera Swarovski" data-price="499.99">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Lamborghini -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="lambo1.jpg" class="card-img-top" alt="Lamborghini">
+            <div class="card-body">
+                <h5 class="card-title">Lamborghini Aventador</h5>
+                <p class="card-text">Modelo 2023, motor V12</p>
+                <p class="text-muted">Precio: $500000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Lamborghini Aventador" data-price="500000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="lambo2.jpg" class="card-img-top" alt="Lamborghini">
+            <div class="card-body">
+                <h5 class="card-title">Lamborghini Huracan</h5>
+                <p class="card-text">Modelo 2023, motor V10</p>
+                <p class="text-muted">Precio: $300000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Lamborghini Huracan" data-price="300000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="lambo3.jpg" class="card-img-top" alt="Lamborghini">
+            <div class="card-body">
+                <h5 class="card-title">Lamborghini Veneno</h5>
+                <p class="card-text">Modelo 2023, motor V12</p>
+                <p class="text-muted">Precio: $800000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Lamborghini Veneno" data-price="800000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="lambo4.jpg" class="card-img-top" alt="Lamborghini">
+            <div class="card-body">
+                <h5 class="card-title">Lamborghini Sian</h5>
+                <p class="card-text">Modelo 2023, motor híbrido V12</p>
+                <p class="text-muted">Precio: $2000000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Lamborghini Sian" data-price="2000000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Ferrari -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="ferrari1.jpg" class="card-img-top" alt="Ferrari">
+            <div class="card-body">
+                <h5 class="card-title">Ferrari LaFerrari</h5>
+                <p class="card-text">Modelo 2023, motor híbrido V12</p>
+                <p class="text-muted">Precio: $3000000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Ferrari LaFerrari" data-price="3000000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="ferrari2.jpg" class="card-img-top" alt="Ferrari">
+            <div classclass="card-body">
+                <h5 class="card-title">Ferrari 812 Superfast</h5>
+                <p class="card-text">Modelo 2023, motor V12</p>
+                <p class="text-muted">Precio: $400000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Ferrari 812 Superfast" data-price="400000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="ferrari3.jpg" class="card-img-top" alt="Ferrari">
+            <div class="card-body">
+                <h5 class="card-title">Ferrari SF90 Stradale</h5>
+                <p class="card-text">Modelo 2023, motor híbrido V8</p>
+                <p class="text-muted">Precio: $500000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Ferrari SF90 Stradale" data-price="500000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="ferrari4.jpg" class="card-img-top" alt="Ferrari">
+            <div class="card-body">
+                <h5 class="card-title">Ferrari F8 Tributo</h5>
+                <p class="card-text">Modelo 2023, motor V8</p>
+                <p class="text-muted">Precio: $300000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Ferrari F8 Tributo" data-price="300000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Bugatti -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="bugatti1.jpg" class="card-img-top" alt="Bugatti">
+            <div class="card-body">
+                <h5 class="card-title">Bugatti Chiron</h5>
+                <p class="card-text">Modelo 2023, motor W16</p>
+                <p class="text-muted">Precio: $3500000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Bugatti Chiron" data-price="3500000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="bugatti2.jpg" class="card-img-top" alt="Bugatti">
+            <div class="card-body">
+                <h5 class="card-title">Bugatti Divo</h5>
+                <p class="card-text">Modelo 2023, motor W16</p>
+                <p class="text-muted">Precio: $5000000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Bugatti Divo" data-price="5000000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="bugatti3.jpg" class="card-img-top" alt="Bugatti">
+            <div class="card-body">
+                <h5 class="card-title">Bugatti Centodieci</h5>
+                <p class="card-text">Modelo 2023, motor W16</p>
+                <p class="text-muted">Precio: $8000000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Bugatti Centodieci" data-price="8000000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="bugatti4.jpg" class="card-img-top" alt="Bugatti">
+            <div class="card-body">
+                <h5 class="card-title">Bugatti La Voiture Noire</h5>
+                <p class="card-text">Modelo 2023, motor W16</p>
+                <p class="text-muted">Precio: $18000000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Bugatti La Voiture Noire" data-price="18000000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Koenigsegg -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="koenigsegg1.jpg" class="card-img-top" alt="Koenigsegg">
+            <div class="card-body">
+                <h5 class="card-title">Koenigsegg Jesko</h5>
+                <p class="card-text">Modelo 2023, motor V8 biturbo</p>
+                <p class="text-muted">Precio: $3500000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Koenigsegg Jesko" data-price="3500000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="koenigsegg2.jpg" class="card-img-top" alt="Koenigsegg">
+            <div class="card-body">
+                <h5 class="card-title">Koenigsegg Regera</h5>
+                <p class="card-text">Modelo 2023, motor V8 biturbo híbrido</p>
+                <p class="text-muted">Precio: $2000000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Koenigsegg Regera" data-price="2000000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="koenigsegg3.jpg" class="card-img-top" alt="Koenigsegg">
+            <div class="card-body">
+                <h5 class="card-title">Koenigsegg Gemera</h5>
+                <p class="card-text">Modelo 2023, motor V8 biturbo híbrido</p>
+
+<p class="text-muted">Precio: $1800000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Koenigsegg Gemera" data-price="1800000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="koenigsegg4.jpg" class="card-img-top" alt="Koenigsegg">
+            <div class="card-body">
+                <h5 class="card-title">Koenigsegg Agera</h5>
+                <p class="card-text">Modelo 2023, motor V8 biturbo</p>
+                <p class="text-muted">Precio: $2500000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Koenigsegg Agera" data-price="2500000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Apollo -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="apollo1.jpg" class="card-img-top" alt="Apollo">
+            <div class="card-body">
+                <h5 class="card-title">Apollo Intensa Emozione</h5>
+                <p class="card-text">Modelo 2023, motor V12</p>
+                <p class="text-muted">Precio: $2500000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Apollo Intensa Emozione" data-price="2500000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="apollo2.jpg" class="card-img-top" alt="Apollo">
+            <div class="card-body">
+                <h5 class="card-title">Apollo Arrow</h5>
+                <p class="card-text">Modelo 2023, motor V8 biturbo</p>
+                <p class="text-muted">Precio: $2000000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Apollo Arrow" data-price="2000000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="apollo3.jpg" class="card-img-top" alt="Apollo">
+            <div class="card-body">
+                <h5 class="card-title">Apollo N</h5>
+                <p class="card-text">Modelo 2023, motor V8 biturbo</p>
+                <p class="text-muted">Precio: $2200000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Apollo N" data-price="2200000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="apollo4.jpg" class="card-img-top" alt="Apollo">
+            <div class="card-body">
+                <h5 class="card-title">Apollo IE</h5>
+                <p class="card-text">Modelo 2023, motor V12</p>
+                <p class="text-muted">Precio: $3000000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Apollo IE" data-price="3000000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Aston Martin -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="aston_martin1.jpg" class="card-img-top" alt="Aston Martin">
+            <div class="card-body">
+                <h5 class="card-title">Aston Martin Valkyrie</h5>
+                <p class="card-text"><strong>Modelo:</strong> Hipercoche de alto rendimiento</p>
+                <p class="card-text"><strong>Motor:</strong> V12 atmosférico de 6.5L</p>
+                <p class="text-muted">Precio: $3500000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Aston Martin Valkyrie" data-price="3500000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="aston_martin2.jpg" class="card-img-top" alt="Aston Martin">
+            <div class="card-body">
+                <h5 class="card-title">Aston Martin DB12</h5>
+                <p class="card-text"><strong>Modelo:</strong> Gran turismo de lujo</p>
+                <p class="card-text"><strong>Motor:</strong> V12 biturbo de 5.2L</p>
+                <p class="text-muted">Precio: $270000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Aston Martin DB12" data-price="270000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="aston_martin3.jpg" class="card-img-top" alt="Aston Martin">
+            <div class="card-body">
+                <h5 class="card-title">Aston Martin Vanquish Zagato Coupé</h5>
+                <p class="card-text"><strong>Modelo:</strong> Gran turismo de altas prestaciones</p>
+                <p class="card-text"><strong>Motor:</strong> V12 atmosférico de 5.9L</p>
+                <p class="text-muted">Precio: $320000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Aston Martin Vanquish Zagato Coupé" data-price="320000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="aston_martin4.jpg" class="card-img-top" alt="Aston Martin">
+            <div class="card-body">
+                <h5 class="card-title">Aston Martin DBS 770 Ultímate</h5>
+                <p class="card-text"><strong>Modelo:</strong> Edición especial de alto rendimiento</p>
+                <p class="card-text"><strong>Motor:</strong> V12 atmosférico de 7.0L</p>
+                <p class="text-muted">Precio: $2000000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Aston Martin DBS 770 Ultímate" data-price="2000000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- McLaren -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="mclaren2.jpg" class="card-img-top" alt="McLaren">
+            <div class="card-body">
+                <h5 class="card-title">McLaren Senna</h5>
+                <p class="card-text"><strong>Modelo:</strong> Hypercar de pista</p>
+                <p class="card-text"><strong>Motor:</strong> V8 biturbo de 4.0L</p>
+                <p class="text-muted">Precio: $1000000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="McLaren Senna" data-price="1000000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="mclaren3.jpg" class="card-img-top" alt="McLaren">
+            <div class="card-body">
+            <h5 class="card-title">McLaren Artura</h5>
+                <p class="card-text"><strong>Modelo:</strong> Híbrido de alto rendimiento</p>
+                <p class="card-text"><strong>Motor:</strong> V6 biturbo de 3.0L + motor eléctrico</p>
+                <p class="text-muted">Precio: $250000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="McLaren Artura" data-price="250000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="mclaren4.jpg" class="card-img-top" alt="McLaren">
+            <div class="card-body">
+                <h5 class="card-title">McLaren Speedtail</h5>
+                <p class="card-text"><strong>Modelo:</strong> Hyper-GT</p>
+                <p class="card-text"><strong>Motor:</strong> V8 biturbo híbrido de 4.0L</p>
+                <p class="text-muted">Precio: $2500000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="McLaren Speedtail" data-price="2500000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="mclaren5.jpg" class="card-img-top" alt="McLaren">
+            <div class="card-body">
+                <h5 class="card-title">McLaren 765LT</h5>
+                <p class="card-text"><strong>Modelo:</strong> Supercarro de alto rendimiento</p>
+                <p class="card-text"><strong>Motor:</strong> V8 biturbo de 4.0L</p>
+                <p class="text-muted">Precio: $400000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="McLaren 765LT" data-price="400000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <!-- Cadillac -->
+    <div class="col-md-3">
+        <div class="card">
+            <img src="cadillac1.jpg" class="card-img-top" alt="Cadillac">
+            <div class="card-body">
+                <h5 class="card-title">Cadillac Escalade</h5>
+                <p class="card-text"><strong>Modelo:</strong> SUV de lujo</p>
+                <p class="card-text"><strong>Motor:</strong> V8 de 6.2L</p>
+                <p class="text-muted">Precio: $80000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Cadillac Escalade" data-price="80000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="cadillac2.jpg" class="card-img-top" alt="Cadillac">
+            <div class="card-body">
+                <h5 class="card-title">Cadillac CT4</h5>
+                <p class="card-text"><strong>Modelo:</strong> Sedán de lujo</p>
+                <p class="card-text"><strong>Motor:</strong> L4 de 2.0L</p>
+                <p class="text-muted">Precio: $50000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Cadillac CT4" data-price="50000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="cadillac3.jpg" class="card-img-top" alt="Cadillac">
+            <div class="card-body">
+                <h5 class="card-title">Cadillac XT6</h5>
+                <p class="card-text"><strong>Modelo:</strong> SUV de lujo mediano</p>
+                <p class="card-text"><strong>Motor:</strong> V6 de 3.6L</p>
+                <p class="text-muted">Precio: $60000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Cadillac XT6" data-price="60000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <img src="cadillac4.jpg" class="card-img-top" alt="Cadillac">
+            <div class="card-body">
+                <h5 class="card-title">Cadillac CT5-V</h5>
+                <p class="card-text"><strong>Modelo:</strong> Sedán deportivo de lujo</p>
+                <p class="card-text"><strong>Motor:</strong> V6 de 3.0L</p>
+                <p class="text-muted">Precio: $70000.00</p>
+                <button class="btn btn-primary btn-add-to-cart" data-name="Cadillac CT5-V" data-price="70000.00">Agregar al carrito</button>
+            </div>
+        </div>
+    </div>
+</div>
+</span>
+</p>
+</div>
+</body>
+</html>
